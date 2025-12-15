@@ -83,7 +83,6 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
         self : instance of KNearestNeighbors
             The current instance of the classifier
         """
-
         X, y = validate_data(self, X, y)
         check_classification_targets(y)
 
@@ -145,7 +144,6 @@ class KNearestNeighbors(ClassifierMixin, BaseEstimator):
         score : float
             Accuracy of the model computed for the (X, y) pairs.
         """
-
         check_is_fitted(self)
 
         X, y = validate_data(self, X, y, reset=False)
@@ -191,7 +189,6 @@ class MonthlySplit(BaseCrossValidator):
         n_splits : int
             The number of splits.
         """
-
         if self.time_col == "index":
             time = X.index
         else:
@@ -223,7 +220,6 @@ class MonthlySplit(BaseCrossValidator):
         idx_test : ndarray
             The testing set indices for that split.
         """
-
         if self.time_col == "index":
             time = X.index
         else:
